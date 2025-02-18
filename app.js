@@ -66,5 +66,11 @@ function loadQuiz() {
 btnEl.addEventListener("click", () => {
   currentQuiz++;
 
+  if (currentQuiz < quizData.length) {
+    loadQuiz();
+  } else {
+    alert("You made it! Great job! ⭐⭐⭐⭐⭐");
+  }
+
   loadQuiz();
 });
