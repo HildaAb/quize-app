@@ -40,3 +40,25 @@ const quizData = [
     correct: "b",
   },
 ];
+
+const questionEl = document.querySelector("#question");
+const a_text = document.querySelector("#a_text");
+const b_text = document.querySelector("#b_text");
+const c_text = document.querySelector("#c_text");
+const d_text = document.querySelector("#d_text");
+
+let currentQuiz = 0;
+
+function loadQuiz() {
+  const currentQuizData = quizData[currentQuiz];
+
+  questionEl.innerHTML = currentQuizData.question;
+  a_text.innerHTML = currentQuizData.a;
+  b_text.innerHTML = currentQuizData.b;
+  c_text.innerHTML = currentQuizData.c;
+  d_text.innerHTML = currentQuizData.d;
+
+  currentQuestion++;
+}
+
+loadQuiz();
