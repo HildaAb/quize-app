@@ -47,7 +47,11 @@ const b_text = document.querySelector("#b_text");
 const c_text = document.querySelector("#c_text");
 const d_text = document.querySelector("#d_text");
 
+const btnEl = document.querySelector("#btn");
+
 let currentQuiz = 0;
+
+loadQuiz();
 
 function loadQuiz() {
   const currentQuizData = quizData[currentQuiz];
@@ -57,8 +61,10 @@ function loadQuiz() {
   b_text.innerHTML = currentQuizData.b;
   c_text.innerHTML = currentQuizData.c;
   d_text.innerHTML = currentQuizData.d;
-
-  currentQuestion++;
 }
 
-loadQuiz();
+btnEl.addEventListener("click", () => {
+  currentQuiz++;
+
+  loadQuiz();
+});
